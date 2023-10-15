@@ -12,35 +12,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.moviesWrap {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px 100px 20px 100px;
-  justify-content: center;
-}
-.movieBox {
-  justify-content: center;
-  margin: 15px;
-  height: 360px;
-}
-.imageBox {
-  width: 200px;
-}
-.infoBox {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  width: 160px;
-  height: 30px;
-  background-color: #373b69;
-  color: white;
-  font-size: 12px;
-}
-.title {
-  width: 130px;
-  margin: 0px;
-}
-.rate {
-  float: right;
-  margin-left: auto;
-}

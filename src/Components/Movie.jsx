@@ -1,15 +1,61 @@
 import "../index.css";
+import MovieDetail from "./MovieDetail";
+import { useState } from "react";
+import styled from "styled-components";
 
 function Movie({ data }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
   return (
-    <div className="movieBox">
-      <img src={data.poster_path} className="imageBox"></img>
-      <div className="infoBox">
-        <div className="title">{data.title}</div>
-        <div className="rate">{data.vote_average}</div>
-      </div>
-    </div>
+    <MovieBox onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      {isHovered && <MovieDetail data={data} />}
+      {!isHovered && (
+        <div>
+          <ImageBox src={data.poster_path}></ImageBox>
+          <InfoBox>
+            <Title className="title">{data.title}</Title>
+            <Rate className="rate">{data.vote_average}</Rate>
+          </InfoBox>
+        </div>
+      )}
+    </MovieBox>
   );
 }
 
 export default Movie;
+
+const MovieBox = styled.div`
+  justify-content: center;
+  margin: 15px;
+  height: 360px;
+`;
+
+const ImageBox = styled.img`
+  width: 200px;
+`;
+const InfoBox = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  width: 160px;
+  height: 30px;
+  background-color: #373b69;
+  color: white;
+  font-size: 12px;
+`;
+
+const Title = styled.div`
+  width: 130px;
+  margin: 0px;
+`;
+const Rate = styled.div`
+  float: right;
+  margin-left: auto;
+`;
