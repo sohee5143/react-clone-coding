@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
+import LoginButton from "./LoginButton";
 function Header() {
   return (
     <HeaderWrap>
@@ -13,6 +14,7 @@ function Header() {
         <Menu to="/movie">영화</Menu>
         <Menu to="/tv">TV 프로그램</Menu>
         <Menu to="/person">인물</Menu>
+        <LoginButton>로그인</LoginButton>
     </HeaderWrap>
   );
 }
