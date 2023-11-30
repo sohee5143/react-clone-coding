@@ -7,11 +7,11 @@ function Movie({ data }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
+    //setIsHovered(true);
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
+    //setIsHovered(false);
   };
   return (
     <MovieBox onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>

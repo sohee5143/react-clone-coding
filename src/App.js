@@ -1,23 +1,28 @@
-import Movie from "./Components/Movie";
-import { movies } from "./MovieDummy";
 import styled from "styled-components";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home"
+import Movies from "./pages/Movies"
+import Header from "./Components/Header"
+import TV from "./pages/TV"
+import Celebrity from "./pages/Celebirity"
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
-    <div className="App">
-      <MoviesWrap>
-        {movies.results.map((item) => {
-          return <Movie data={item} />;
-        })}
-      </MoviesWrap>
-    </div>
+    <div>
+      
+      <BrowserRouter>
+      <Header />
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/movie" element={<Movies />} />
+          <Route path="/tv" element={<TV />} />
+          <Route path="/person" element={<Celebrity/>} />
+          <Route path="/login" element={<LoginPage/>} />
+        </Routes>
+      </BrowserRouter>
+      </div>
   );
 }
 
 export default App;
-const MoviesWrap = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px 100px 20px 100px;
-  justify-content: center;
-`;
