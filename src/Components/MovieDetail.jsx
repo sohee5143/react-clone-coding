@@ -13,21 +13,30 @@ function MovieDetail({ data }) {
 export default MovieDetail;
 
 const DetailMovieBox = styled.div`
-  justify-content: center;
-  margin: 15px;
-  height: 360px;
   position: absolute;
+  opacity: 0.8;
+  background-color: black;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  height: 93%;
+  width: 81%;
+  position: absolute;
+  z-index: 100;
+  padding: 20px;
 `;
 
 const DetailTitle = styled.div`
-  width: 200px;
+  width: 100%;
   color: white;
   font-size: 15px;
   margin-bottom: 10px;
+  font-weight: 700;
 `;
 
 const DetailContent = styled.div`
-  width: 200px;
+  width: 100%;
+
   color: white;
   font-size: 15px;
 `;

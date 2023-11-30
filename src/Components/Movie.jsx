@@ -15,16 +15,14 @@ function Movie({ data }) {
   };
   return (
     <MovieBox onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      {isHovered && <MovieDetail data={data} />}
-      {!isHovered && (
-        <div>
-          <ImageBox src={data.poster_path}></ImageBox>
-          <InfoBox>
-            <Title className="title">{data.title}</Title>
-            <Rate className="rate">{data.vote_average}</Rate>
-          </InfoBox>
-        </div>
-      )}
+      <div>
+        <ImageBox src={data.poster_path}></ImageBox>
+        <InfoBox>
+          <Title className="title">{data.title}</Title>
+          <Rate className="rate">{data.vote_average}</Rate>
+        </InfoBox>
+        {isHovered && <MovieDetail data={data} />}
+      </div>
     </MovieBox>
   );
 }
@@ -32,6 +30,7 @@ function Movie({ data }) {
 export default Movie;
 
 const MovieBox = styled.div`
+  position: relative;
   justify-content: center;
   margin: 15px;
   height: 360px;
