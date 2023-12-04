@@ -1,11 +1,8 @@
+import React from "react";
 import styled from "styled-components";
 
 function TV() {
-  return (
-    <TVWrap>
-        티비
-    </TVWrap>
-  );
+  return <TVWrap>티비</TVWrap>;
 }
 
 export default TV;

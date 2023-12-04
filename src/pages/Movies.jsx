@@ -1,14 +1,15 @@
+import React from "react";
 import styled from "styled-components";
 import Movie from "../Components/Movie";
-import { movies } from "../MovieDummy"
+import { movies } from "../MovieDummy";
 
 function Movies() {
   return (
     <MoviesWrap>
-    {movies.results.map((item) => {
-      return <Movie data={item} />;
-    })}
-  </MoviesWrap>
+      {movies.results.map((item) => {
+        return <Movie data={item} />;
+      })}
+    </MoviesWrap>
   );
 }
 

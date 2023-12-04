@@ -1,10 +1,11 @@
+import React from "react";
 import styled from "styled-components";
 import AdPage from "../Components/AdPage";
 
 function Home() {
   return (
     <HomeWrap>
-        <AdPage></AdPage>
+      <AdPage></AdPage>
     </HomeWrap>
   );
 }
